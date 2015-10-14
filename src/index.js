@@ -1,7 +1,6 @@
 'use strict'
 
 import React, { Component, PropTypes } from 'react'
-import {findDOMNode} from 'react-dom'
 import classname from 'classnames'
 import cssStyle from './style'
 
@@ -120,7 +119,7 @@ export default class ReactTooltip extends Component {
   }
 
   _updatePosition () {
-    let node = findDOMNode(this)
+    let node = React.getDOMNode(this)
 
     let tipWidth = node.clientWidth
     let tipHeight = node.clientHeight
@@ -228,7 +227,7 @@ export default class ReactTooltip extends Component {
   updateTooltip (e) {
     if (this.trim(this.state.placeholder).length > 0) {
       const {place} = this.state
-      const node = findDOMNode(this)
+      const node = React.getDOMNode(this)
       if (this.state.effect === 'float') {
         // const offsetY = e.clientY
         this.setState({
