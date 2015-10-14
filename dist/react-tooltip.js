@@ -159,7 +159,7 @@ var ReactTooltip = (function (_Component) {
   };
 
   ReactTooltip.prototype._updatePosition = function _updatePosition() {
-    var node = _react2['default'].getDOMNode(this);
+    var node = _react2['default'].findDOMNode(this);
 
     var tipWidth = node.clientWidth;
     var tipHeight = node.clientHeight;
@@ -271,7 +271,7 @@ var ReactTooltip = (function (_Component) {
     if (this.trim(this.state.placeholder).length > 0) {
       var place = this.state.place;
 
-      var node = _react2['default'].getDOMNode(this);
+      var node = _react2['default'].findDOMNode(this);
       if (this.state.effect === 'float') {
         // const offsetY = e.clientY
         this.setState({

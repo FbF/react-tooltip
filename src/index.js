@@ -119,7 +119,7 @@ export default class ReactTooltip extends Component {
   }
 
   _updatePosition () {
-    let node = React.getDOMNode(this)
+    let node = React.findDOMNode(this)
 
     let tipWidth = node.clientWidth
     let tipHeight = node.clientHeight
@@ -227,7 +227,7 @@ export default class ReactTooltip extends Component {
   updateTooltip (e) {
     if (this.trim(this.state.placeholder).length > 0) {
       const {place} = this.state
-      const node = React.getDOMNode(this)
+      const node = React.findDOMNode(this)
       if (this.state.effect === 'float') {
         // const offsetY = e.clientY
         this.setState({
